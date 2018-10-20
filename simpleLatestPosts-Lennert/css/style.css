@@ -1,0 +1,58 @@
+/* Create three equal columns that floats next to each other */
+/* Create three equal columns that floats next to each other */
+.column_slp {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+    border: #D3D3D3 solid 2px;
+}
+
+.title_slp {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 84, 100, 0.44);
+    font-size: 24px;
+}
+
+.description_slp {
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+
+.button_slp {
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid rgba(255, 84, 100, 0.44);
+    border-radius: 10px;
+    color: rgba(255, 84, 100);
+    padding: 10px 30px;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+
+.button_slp:hover {
+    background: rgba(255, 84, 100, 0.44);
+    color: #fff;
+}
+
+.popup_effect_slp {
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+
+.popup_effect_slp:hover {
+    box-shadow: 0px 60px 60px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: translate(0, -10px);
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .column_slp {
+        width: 80%;
+        margin-left: 10%;
+    }
+}

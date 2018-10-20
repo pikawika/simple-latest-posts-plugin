@@ -39,7 +39,7 @@ Hence to the simplicity of this plugin it should work on older and newer version
 
 ## Usage
 
-To use this plugin one can simply insert [simpleLatestPosts] anywhere they like the posts to be displayed. This will use the default settings being:
+To use this plugin one can simply insert [simple_latest_posts] anywhere they like the posts to be displayed. This will use the default settings being:
 
 > - Load the latest 10 posts initially
 > - English text
@@ -47,26 +47,23 @@ To use this plugin one can simply insert [simpleLatestPosts] anywhere they like 
 
 To edit these defaults simply specify what you want them replaced with (you can skip those who you wish not to change)
 
-> - readMoreText
+> - read_more_text
 >    - String -> Text that should be displayed in the read more button
-> - loadMoreText
->    - String -> Text that should be displayed in the load more button
-> - initialAmountOfPosts
+> - initial_amount_of_posts
 >    - Integer -> Amount of posts that should initially be loaded
-> - amountOfMorePostsToLoad
->    - Integer -> Amount of posts to add to the current list after clicking the load more button
+
 
 Your shortcode should look something like this
 
 ```
-[simpleLatestPosts readMoreText='Lees Meer' loadMoreText='Laad meer' initialAmountOfPosts=5 amountOfMorePostsToLoad=5]
+[simpleLatestPosts read_more_text='Lees Meer' initialAmountOfPosts=5 initial_amount_of_posts=5]
 ```
 
 ## Examples
 
-Code to load 5 initial posts and add 5 after each load more click with custom text. The displayed text is now dutch.
+Code to load 5 initial posts with custom read more text. The displayed text is now dutch.
 ```
-[simpleLatestPosts readMoreText='Lees Meer' loadMoreText='Laad meer' initialAmountOfPosts=5 amountOfMorePostsToLoad=5]
+[simpleLatestPosts read_more_text='Lees Meer' initialAmountOfPosts=5 initial_amount_of_posts=5]
 ```
 
 ## Modifying the plugin
@@ -83,3 +80,7 @@ The following sources were used to make this plugin.
 >    - https://codex.wordpress.org/Shortcode_API
 > - Info about wp_query
 >    - https://codex.wordpress.org/Class_Reference/WP_Query
+> - Info about custom css
+>    - https://www.dummies.com/web-design-development/wordpress/enhance-wordpress-plugins-css-javascript/
+> - Naming conventions
+>    - https://codex.wordpress.org/WordPress_Coding_Standards

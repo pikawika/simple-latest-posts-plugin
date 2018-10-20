@@ -18,45 +18,55 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+// add css to plugin
+add_action('init', 'add_css');
+add_action('wp_enqueue_scripts', 'enqueue_css');
+
+function add_css() {
+    wp_register_style( 'style_slp', plugins_url('/css/style.css', __FILE__));
+}
+
+function enqueue_css(){
+    wp_enqueue_style( 'style_slp' );
+}
+
 // Enable usage of shortcode with name simpleLatestPosts
-add_shortcode('simpleLatestPosts', 'initialise_SMP');
+add_shortcode('simple_latest_posts', 'initialise_slp');
 
 //init function that accepts optional params for custom button text used in the plugin and default loaded posts
-//atrr params are not camelcased since wordpress always passes them ass lowercase
-function initialise_SMP($atts) {
+function initialise_slp($atts) {
     extract(shortcode_atts(array(
-        'readmoretext' => 'Read more',
-        'initialamountofposts' => 10,
-        'amountofmorepoststoload' => 5,
+        'read_more_text' => 'Read more',
+        'initial_amount_of_posts' => 6,
     ), $atts));
 
     //get the posts from the database
-    $postsToAddToList =  getLatestPosts_SMP($initialamountofposts);
+    $posts_to_add_to_list =  get_latest_posts_slp($initial_amount_of_posts);
 
     //process the posts list to html
-    $formattedPosts = printPosts_SMP($postsToAddToList, $readmoretext);
+    $formatted_posts = print_posts_slp($posts_to_add_to_list, $read_more_text);
 
     //show the html to the user
-    return $formattedPosts;
+    return $formatted_posts;
 }
 
-function getLatestPosts_SMP($amountToLoad, $amountToSkip = 0) {
-    $queryArgs = array(
+function get_latest_posts_slp($amount_to_load, $amount_to_skip = 0) {
+    $query_args = array(
         'order' => 'asc', //newest first
         'post_type' => 'post', //any type of post
-        'posts_per_page' => $amountToLoad, //how many posts should be loaded
-        'offset' => $amountToSkip //skip certain items if needed (load more button)
+        'posts_per_page' => $amount_to_load, //how many posts should be loaded
+        'offset' => $amount_to_skip //skip certain items if needed (load more button)
     );
-    return new WP_Query( $queryArgs );
+    return new WP_Query( $query_args );
 }
 
-function printPosts_SMP($postsToShow, $readmoretext ) {
+function print_posts_slp($posts_to_show, $read_more_text ) {
     ob_start(); //record all the echo data
 
-    if ( $postsToShow->have_posts() ) {
+    if ( $posts_to_show->have_posts() ) {
         echo '<ul>';
-        while ( $postsToShow->have_posts() ) {
-            $postsToShow->the_post();
+        while ( $posts_to_show->have_posts() ) {
+            $posts_to_show->the_post();
             echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
         }
         echo '</ul>';
@@ -66,7 +76,7 @@ function printPosts_SMP($postsToShow, $readmoretext ) {
         echo '<H3> No blogposts found</H3>';
     }
 
-    $formattedPosts = ob_get_contents(); //get all the echo data
+    $formatted_posts = ob_get_contents(); //get all the echo data
     ob_end_clean(); // stop and clean echo listener
-    return $formattedPosts; //html for the itterated posts
+    return $formatted_posts; //html for the iterated posts
 }

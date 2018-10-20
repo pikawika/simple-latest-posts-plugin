@@ -84,3 +84,5 @@ The following sources were used to make this plugin.
 >    - https://www.dummies.com/web-design-development/wordpress/enhance-wordpress-plugins-css-javascript/
 > - Naming conventions
 >    - https://codex.wordpress.org/WordPress_Coding_Standards
+> - Css inspiration
+>    - https://www.lennertbontinck.com/ (and my other projects)

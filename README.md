@@ -2,7 +2,7 @@
 
 This is the GitHub repository for a small WordPress plugin I had to write as an allowance test for my internship at [Green Bananas](https://www.greenbananas.be/).
 
-This plugin loads the 10 latest WordPress blogpost with a few extra options.
+This plugin loads the 10 latest WordPress blogpost sorted from new to old with a few extra options.
 
 ## Inhoudsopgave
 
@@ -39,11 +39,35 @@ Hence to the simplicity of this plugin it should work on older and newer version
 
 ## Usage
 
-> Coming soon
+To use this plugin one can simply insert [simpleLatestPosts] anywhere they like the posts to be displayed. This will use the default settings being:
+
+> - Load the latest 10 posts initially
+> - English text
+> - load 5 more posts after clicking load more button
+
+To edit these defaults simply specify what you want them replaced with (you can skip those who you wish not to change)
+
+> - readMoreText
+>    - String -> Text that should be displayed in the read more button
+> - loadMoreText
+>    - String -> Text that should be displayed in the load more button
+> - initialAmountOfPosts
+>    - Integer -> Amount of posts that should initially be loaded
+> - amountOfMorePostsToLoad
+>    - Integer -> Amount of posts to add to the current list after clicking the load more button
+
+Your shortcode should look something like this
+
+```
+[simpleLatestPosts readMoreText='Lees Meer' loadMoreText='Laad meer' initialAmountOfPosts=5 amountOfMorePostsToLoad=5]
+```
 
 ## Examples
 
-> Coming soon
+Code to load 5 initial posts and add 5 after each load more click with custom text. The displayed text is now dutch.
+```
+[simpleLatestPosts readMoreText='Lees Meer' loadMoreText='Laad meer' initialAmountOfPosts=5 amountOfMorePostsToLoad=5]
+```
 
 ## Modifying the plugin
 
@@ -53,5 +77,9 @@ This plugin is completely open sources and can be modified to your hearts desire
 
 The following sources were used to make this plugin.
 
-> -  Info about layout of PHP file containing package information
+> - Info about layout of PHP file containing package information
 >    - https://www.dreamhost.com/blog/how-to-create-your-first-wordpress-plugin/
+> - Info about shortcode good practices
+>    - https://codex.wordpress.org/Shortcode_API
+> - Info about wp_query
+>    - https://codex.wordpress.org/Class_Reference/WP_Query

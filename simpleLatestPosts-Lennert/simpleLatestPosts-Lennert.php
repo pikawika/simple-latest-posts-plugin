@@ -40,7 +40,7 @@ function initialise_slp($atts)
 {
     extract(shortcode_atts(array(
         'read_more_text' => 'Read more',
-        'initial_amount_of_posts' => 10,
+        'initial_amount_of_posts' => 6,
     ), $atts));
 
     //get the posts from the database

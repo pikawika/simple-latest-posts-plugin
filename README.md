@@ -11,8 +11,8 @@ This plugin loads the 10 latest WordPress blogpost sorted from new to old with a
 > - [Compatibility](#compatibility)
 > - [Usage](#usage)
 > - [Examples](#examples)
-> - [Download](#download)
 > - [Modifying the plugin](#modifying-the-plugin)
+> - [Download](#download)
 > - [Sources](#sources)
 
 ## Creator
@@ -23,13 +23,15 @@ This plugin loads the 10 latest WordPress blogpost sorted from new to old with a
 
 ## Installation
 
-> Coming soon
+> 1. [Download the latest zip](https://www.lennertbontinck.com/wp/slp)
+> 2. Coming soon
+
 
 ## Compatibility
 
 This plugin was created for and tested with WordPress 4.9.8 and MariaDB 10.1.36 ran localy on a Windows 10 environment using XAMPP.
 
-> - I used the default WordPress theme "Twenty Seventeen" and created 17 sample posts as dummy data.
+> - I used the default WordPress theme "Twenty Seventeen" and created 7 sample posts as dummy data.
 > - Every post should have a title, description and a featured image.
 > - I used the default "sample-page" to insert my shortcode and test the plugin.
 > - I made the page layout One Column (setting under Theme Options).
@@ -49,26 +51,47 @@ To edit these defaults simply specify what you want them replaced with (you can 
 
 > - read_more_text
 >    - String -> Text that should be displayed in the read more button
+>    - eg: Lees meer
+> - load_more_text
+>    - String -> Text that should be displayed in the load more button
+>    - eg: Laad meer
 > - initial_amount_of_posts
 >    - Integer -> Amount of posts that should initially be loaded
+>    - eg: 3
+> - load_more_amount
+>    - Integer -> Amount of posts that should be loaded after clicking load more
+>    - eg: 6
 
 
-Your shortcode should look something like this
+Your shortcode, in the longest form, should look something like this
 
 ```
-[simpleLatestPosts read_more_text='Lees Meer' initialAmountOfPosts=5 initial_amount_of_posts=5]
+[simpleLatestPosts read_more_text='Lees meer' load_more_text='Laad meer' initialAmountOfPosts=3  load_more_amount=6]
 ```
 
 ## Examples
-
-Code to load 5 initial posts with custom read more text. The displayed text is now dutch.
+Default
 ```
-[simpleLatestPosts read_more_text='Lees Meer' initialAmountOfPosts=5 initial_amount_of_posts=5]
+[simple_latest_posts]
+```
+
+Default with the exception to load 3 initial posts instead of 6.
+```
+[simple_latest_posts initial_amount_of_posts=3]
+```
+
+Code to load 3 initial posts and 6 more after clicking load more with custom text. The displayed text is now dutch.
+```
+[simple_latest_posts initial_amount_of_posts=3 load_more_amount=6 read_more_text='Lees Meer' load_more_text='Laad meer']
 ```
 
 ## Modifying the plugin
 
 This plugin is completely open sources and can be modified to your hearts desire. I but some comments in my code so it's easier to read and modify. 
+
+## Download
+
+> You can download the latest .zip version [here](https://www.lennertbontinck.com/wp/slp)
 
 ## Sources
 
@@ -86,3 +109,5 @@ The following sources were used to make this plugin.
 >    - https://codex.wordpress.org/WordPress_Coding_Standards
 > - Css inspiration
 >    - https://www.lennertbontinck.com/ (and my other projects)
+> - Ajax
+>    - https://pippinsplugins.com/process-ajax-requests-correctly-in-wordpress-plugins/

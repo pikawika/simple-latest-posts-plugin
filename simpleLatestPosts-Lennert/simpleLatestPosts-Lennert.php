@@ -57,7 +57,7 @@ function printPosts_SMP($postsToShow, $readmoretext ) {
         echo '<ul>';
         while ( $postsToShow->have_posts() ) {
             $postsToShow->the_post();
-            echo '<li>' . get_the_title() . '</li>';
+            echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
         }
         echo '</ul>';
         /* Restore original Post Data */

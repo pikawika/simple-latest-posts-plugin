@@ -11,6 +11,7 @@ It loads the 10 latest WordPress blogpost with a few extra options.
 > - [Usage](#usage)
 > - [Examples](#examples)
 > - [Download](#download)
+> - [Sources](#sources)
 
 ## Creator
 
@@ -19,18 +20,30 @@ It loads the 10 latest WordPress blogpost with a few extra options.
 | Lennert Bontinck | <https://github.com/pikawika> | [info@lennertbontinck.com](mailto:info@lennertbontinck.com) |
 
 ## Installation
+
 > Coming soon
 
 ## Compatibility
+
 This plugin was created for and tested with WordPress 4.9.8 and MariaDB 10.1.36 ran localy on a Windows 10 environment using XAMPP.
-Hence to the simplicity it should work on older and newer versions of WordPress (online and/or offline) without a problem!
+
+I used the default WordPress theme "Twenty Seventeen" and created 17 sample posts as dummy data.
+Every post should have a title, description and a featured image.
+I used the default "sample-page" to insert my shortcode and test the plugin.
+
+Hence to the simplicity of this plugin it should work on older and newer versions of WordPress (online and/or offline) and any theme or page without a problem!
+
 
 ## Usage
+
 > Coming soon
 
 ## Examples
 
 > Coming soon
 
-## Download
+## Sources
+
+The following sources were used to make this plugin.
+
 > Coming soon

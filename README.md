@@ -2,9 +2,9 @@
 
 This is the GitHub repository for a small WordPress plugin I had to write as an allowance test for my internship at [Green Bananas](https://www.greenbananas.be/).
 
-This plugin loads the 10 latest WordPress blogpost sorted from new to old with a few extra options.
+This plugin loads the 6 (editable) latest WordPress blogpost sorted from new to old with the option to load more posts.
 
-## Inhoudsopgave
+## Table of contents
 
 > - [Creator](#creator)
 > - [Installation](#installation)
@@ -58,10 +58,10 @@ To edit these defaults simply specify what you want them replaced with (you can 
 
 > - read_more_text
 >    - String -> Text that should be displayed in the read more button
->    - eg: Lees meer
+>    - eg: 'Lees meer'
 > - load_more_text
 >    - String -> Text that should be displayed in the load more button
->    - eg: Laad meer
+>    - eg: 'Laad meer'
 > - initial_amount_of_posts
 >    - Integer -> Amount of posts that should initially be loaded
 >    - eg: 3
@@ -97,7 +97,7 @@ Code to load 3 initial posts and 6 more after clicking load more with custom tex
 
 ## Modifying the plugin
 
-This plugin is completely open sources and can be modified to your hearts desire. I but some comments in my code so it's easier to read and modify. 
+This plugin is completely open sources and can be modified to your hearts desire. I've put some comments in my code so it's easier to read and modify. 
 
 ## Download
 

@@ -73,7 +73,7 @@ To edit these defaults simply specify what you want them replaced with (you can 
 Your shortcode, in the longest form, should look something like this
 
 ```
-[simpleLatestPosts read_more_text='Lees meer' load_more_text='Laad meer' initialAmountOfPosts=3  load_more_amount=6]
+[simple_latest_posts read_more_text='Lees Meer' load_more_text='Laad meer' initial_amount_of_posts=3 load_more_amount=6]
 ```
 
 ## Examples

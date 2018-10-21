@@ -81,16 +81,19 @@ Default
 ```
 [simple_latest_posts]
 ```
+<img src="/assets/default.gif" height="500" />
 
 Default with the exception to load 3 initial posts instead of 6.
 ```
 [simple_latest_posts initial_amount_of_posts=3]
 ```
+<img src="/assets/init3.gif" height="500" />
 
 Code to load 3 initial posts and 6 more after clicking load more with custom text. The displayed text is now dutch.
 ```
 [simple_latest_posts initial_amount_of_posts=3 load_more_amount=6 read_more_text='Lees Meer' load_more_text='Laad meer']
 ```
+<img src="/assets/custom.gif" height="500" />
 
 ## Modifying the plugin
 

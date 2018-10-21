@@ -23,7 +23,7 @@ This plugin loads the 10 latest WordPress blogpost sorted from new to old with a
 
 ## Installation
 
-> 1. [Download the latest zip](https://www.lennertbontinck.com/wp/slp)
+> 1. [Download the latest zip](http://lennertbontinck.com/ftp/wp/simpleLatestPosts-Lennert.zip)
 > 2. Coming soon
 
 
@@ -91,7 +91,7 @@ This plugin is completely open sources and can be modified to your hearts desire
 
 ## Download
 
-> You can download the latest .zip version [here](https://www.lennertbontinck.com/wp/slp)
+> You can download the latest .zip version [here](http://lennertbontinck.com/ftp/wp/simpleLatestPosts-Lennert.zip)
 
 ## Sources
 

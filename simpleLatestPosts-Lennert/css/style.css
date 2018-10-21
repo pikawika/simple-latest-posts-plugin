@@ -1,11 +1,10 @@
-/* Create three equal columns that floats next to each other */
-/* Create three equal columns that floats next to each other */
 .column_slp {
     float: left;
     width: 30%;
     padding: 10px;
     margin: 10px;
     border: #D3D3D3 solid 2px;
+    max-width: 450px;
 }
 
 .title_slp {
@@ -16,7 +15,9 @@
 }
 
 .simple_latest_posts_container {
-    display: inline-block;
+    display: table;
+    margin: 0 auto;
+    width: 100% !important;
 }
 
 .description_slp {
@@ -70,7 +71,7 @@
     transform: translate(0, -10px);
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Responsive layout*/
 @media screen and (max-width: 700px) {
     .column_slp {
         width: 80%;

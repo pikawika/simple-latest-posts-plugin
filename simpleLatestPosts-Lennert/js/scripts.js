@@ -9,11 +9,18 @@ jQuery(document).ready( function onAjaxClick($) {
         };
         // the_ajax_script.ajaxurl is a variable that will contain the url to the ajax processing file
         $.post(the_script.ajaxurl, data, function(response) {
-            //remove load more button since a new one will replace it
-            document.getElementById('load_more_button').remove();
-            // place the html in the container
-            var div = document.getElementById('slp_container');
-            div.innerHTML += response;
+            //make the response elemen a dom element so we can query it
+            var xmlString = response
+                , parser = new DOMParser()
+                , DOMResponse = parser.parseFromString(xmlString, "text/html");
+
+            //replace the load more button with the new one
+            $( "#load_more_button" ).replaceWith( DOMResponse.getElementById('load_more_button') );
+
+            // place the new blogposts into the old container
+            document.getElementById('slp_container').innerHTML += DOMResponse.getElementById('slp_container').innerHTML;
+
+
             //rerun linking function
             onAjaxClick($);
         });

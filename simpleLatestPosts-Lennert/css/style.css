@@ -15,6 +15,10 @@
     font-size: 24px;
 }
 
+.simple_latest_posts_container {
+    display: inline-block;
+}
+
 .description_slp {
     text-align: justify;
     overflow: hidden;
@@ -23,7 +27,7 @@
     -webkit-box-orient: vertical;
 }
 
-.button_slp {
+.read_more_button_slp {
     background: transparent none repeat scroll 0 0;
     border: 2px solid rgba(255, 84, 100, 0.44);
     border-radius: 10px;
@@ -33,7 +37,24 @@
     text-align: center;
 }
 
-.button_slp:hover {
+.load_more_button_slp:hover {
+    background: rgba(255, 84, 100, 0.44);
+    color: #fff;
+}
+
+.load_more_button_slp {
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid rgba(255, 84, 100, 0.44);
+    border-radius: 10px;
+    color: rgba(255, 84, 100);
+    padding: 10px 30px;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.read_more_button_slp:hover {
     background: rgba(255, 84, 100, 0.44);
     color: #fff;
 }

@@ -31,6 +31,7 @@ add_action('wp_print_scripts', 'add_js');
 
 // Link ajax call to function
 add_action('wp_ajax_load_more', 'ajax_load_more');
+add_action('wp_ajax_nopriv_load_more', 'ajax_load_more');
 
 
 // Add css to plugin -> step 1
@@ -66,7 +67,7 @@ function initialise_slp($atts)
     $posts_to_add_to_list = get_latest_posts_slp($initial_amount_of_posts);
 
     //process the posts list to html
-    $formatted_posts = print_posts_slp($posts_to_add_to_list, $read_more_text, $load_more_text, $load_more_amount, $initial_amount_of_posts);
+    $formatted_posts = print_posts_slp($posts_to_add_to_list, $read_more_text, $load_more_text, intval($load_more_amount), intval($initial_amount_of_posts));
 
     //show the html to the user
     return $formatted_posts;

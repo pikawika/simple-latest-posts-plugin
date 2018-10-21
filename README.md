@@ -42,6 +42,7 @@ This plugin was created for and tested with WordPress 4.9.8 and MariaDB 10.1.36 
 > - Every post should have a title, description and a featured image.
 > - I used the default "sample-page" to insert my shortcode and test the plugin.
 > - I made the page layout One Column (setting under Theme Options).
+> - Since we use ajax calls to load more posts, jquery should be initialized on your theme.
 
 Hence to the simplicity of this plugin it should work on older and newer versions of WordPress (online and/or offline) and any theme or page without a problem!
 
@@ -50,9 +51,9 @@ Hence to the simplicity of this plugin it should work on older and newer version
 
 To use this plugin one can simply insert [simple_latest_posts] anywhere they like the posts to be displayed. This will use the default settings being:
 
-> - Load the latest 10 posts initially
+> - Load the newest 6 posts initially
 > - English text
-> - load 5 more posts after clicking load more button
+> - load 3 more posts after clicking load more button
 
 To edit these defaults simply specify what you want them replaced with (you can skip those who you wish not to change)
 
@@ -97,7 +98,7 @@ Code to load 3 initial posts and 6 more after clicking load more with custom tex
 
 ## Modifying the plugin
 
-This plugin is completely open sources and can be modified to your hearts desire. I've put some comments in my code so it's easier to read and modify. 
+This plugin is completely open sources and can be modified to your hearts desire. I've put a lot of comments in my code so it's easier to read and modify. 
 
 ## Download
 

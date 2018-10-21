@@ -24,7 +24,14 @@ This plugin loads the 10 latest WordPress blogpost sorted from new to old with a
 ## Installation
 
 > 1. [Download the latest zip](http://lennertbontinck.com/ftp/wp/simpleLatestPosts-Lennert.zip)
-> 2. Coming soon
+> 2. Open your WordPress admin panel
+> 3. Go to the plugins tab
+> 4. Click "Add New"
+> 5. Select upload plugin
+> 6. Choose the file you just download -> "simpleLatestPosts-Lennert.zip"
+> 7. Click "Install Now"
+> 8. Installation should succeed and you should be able to activate the plugin!
+> 9. [Usage instructions](#usage)
 
 
 ## Compatibility

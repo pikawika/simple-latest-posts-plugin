@@ -31,6 +31,7 @@ add_action('wp_print_scripts', 'add_js');
 
 // Link ajax call to function
 add_action('wp_ajax_load_more', 'ajax_load_more');
+add_action('wp_ajax_nopriv_load_more', 'ajax_load_more');
 
 
 // Add css to plugin -> step 1
@@ -66,7 +67,7 @@ function initialise_slp($atts)
     $posts_to_add_to_list = get_latest_posts_slp($initial_amount_of_posts);
 
     //process the posts list to html
-    $formatted_posts = print_posts_slp($posts_to_add_to_list, $read_more_text, $load_more_text, $load_more_amount, $initial_amount_of_posts);
+    $formatted_posts = print_posts_slp($posts_to_add_to_list, $read_more_text, $load_more_text, intval($load_more_amount), intval($initial_amount_of_posts));
 
     //show the html to the user
     return $formatted_posts;
@@ -94,12 +95,13 @@ function print_posts_slp($posts_to_show, $read_more_text, $load_more_text, $load
         echo '<div class="simple_latest_posts_container" id="slp_container">';
 
         //loop al posts
+        //we clear all tags so that no css etc is included
         while ($posts_to_show->have_posts()) {
             $posts_to_show->the_post();
             echo '<div class="column_slp popup_effect_slp">
             <img class="img_slp" src="' . get_the_post_thumbnail_url() . '">
-            <p class="title_slp">' . get_the_title() . '</p>
-            <p class="description_slp">' . get_the_content() . '</p>
+            <p class="title_slp">' . preg_replace('/\s+/', ' ', wp_strip_all_tags( get_the_title() )) . '</p>
+            <p class="description_slp">' . preg_replace('/\s+/', ' ', wp_strip_all_tags( get_the_content() )) . '</p>
             <a href="' . get_permalink() . '"><p class="read_more_button_slp">' . $read_more_text . '</p></a>            
             </div>';
         }
